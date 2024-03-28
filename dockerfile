@@ -182,13 +182,5 @@ RUN pacman -S --noconfirm pyqt-builder
 # Set QT_QMAKE_EXECUTABLE environment variable
 ENV QT_QMAKE_EXECUTABLE /usr/lib/qt5/bin/qmake
 
-RUN python3 setup.py bootstrap
 
-# Build the dependencies
-RUN python3 ./setup.py build_dep linux
-
-# Build the Calibre binary
-RUN python3 ./setup.py linux
-
-RUN rm -rf /var/cache/pacman/pkg/* /calibre-build
 
